@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Prsktika3_DSDataSet" targetNamespace="http://tempuri.org/Prsktika3_DSDataSet.xsd" xmlns:mstns="http://tempuri.org/Prsktika3_DSDataSet.xsd" xmlns="http://tempuri.org/Prsktika3_DSDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="UNLV_IncConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="UNLV_IncConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Praktika3_DS.Properties.Settings.GlobalReference.Default.UNLV_IncConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientsTableAdapter" GeneratorDataComponentClassName="ClientsTableAdapter" Name="Clients" UserDataComponentName="ClientsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UNLV_IncConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+    Cl.FirstNameClient, 
+    Cl.SurNameClient, 
+    Cl.MiddleNameClient, 
+    Cl.PasportSeriya, 
+    Cl.PasportNumber, 
+    G.NameGood, 
+    G.GoodNumber, 
+    G.GoodCost, 
+    G.GoodNalichie, 
+    O.Quantity, 
+    O.OrderDate
+FROM 
+    Orders O
+    JOIN Clients Cl ON O.ID_Client = Cl.ID_Client
+    JOIN Goods G ON O.ID_Good = G.ID_Good;</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FirstNameClient" DataSetColumn="FirstNameClient" />
+              <Mapping SourceColumn="SurNameClient" DataSetColumn="SurNameClient" />
+              <Mapping SourceColumn="MiddleNameClient" DataSetColumn="MiddleNameClient" />
+              <Mapping SourceColumn="PasportSeriya" DataSetColumn="PasportSeriya" />
+              <Mapping SourceColumn="PasportNumber" DataSetColumn="PasportNumber" />
+              <Mapping SourceColumn="NameGood" DataSetColumn="NameGood" />
+              <Mapping SourceColumn="GoodNumber" DataSetColumn="GoodNumber" />
+              <Mapping SourceColumn="GoodCost" DataSetColumn="GoodCost" />
+              <Mapping SourceColumn="GoodNalichie" DataSetColumn="GoodNalichie" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="OrderDate" DataSetColumn="OrderDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GoodsTableAdapter" GeneratorDataComponentClassName="GoodsTableAdapter" Name="Goods" UserDataComponentName="GoodsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UNLV_IncConnectionString (Settings)" DbObjectName="UNLV_Inc.dbo.Goods" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Goods] WHERE (([ID_Good] = @Original_ID_Good) AND ([NameGood] = @Original_NameGood) AND ([GoodNumber] = @Original_GoodNumber) AND ([GoodCost] = @Original_GoodCost) AND ([GoodNalichie] = @Original_GoodNalichie) AND ((@IsNull_GoodTeg_ID = 1 AND [GoodTeg_ID] IS NULL) OR ([GoodTeg_ID] = @Original_GoodTeg_ID)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NameGood" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NameGood" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GoodNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_GoodCost" Precision="10" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="GoodCost" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GoodNalichie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNalichie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GoodTeg_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodTeg_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GoodTeg_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodTeg_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Goods] ([NameGood], [GoodNumber], [GoodCost], [GoodNalichie], [GoodTeg_ID]) VALUES (@NameGood, @GoodNumber, @GoodCost, @GoodNalichie, @GoodTeg_ID);
+SELECT ID_Good, NameGood, GoodNumber, GoodCost, GoodNalichie, GoodTeg_ID FROM Goods WHERE (ID_Good = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NameGood" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NameGood" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GoodNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@GoodCost" Precision="10" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="GoodCost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GoodNalichie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNalichie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GoodTeg_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodTeg_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Good, NameGood, GoodNumber, GoodCost, GoodNalichie, GoodTeg_ID FROM dbo.Goods</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Goods] SET [NameGood] = @NameGood, [GoodNumber] = @GoodNumber, [GoodCost] = @GoodCost, [GoodNalichie] = @GoodNalichie, [GoodTeg_ID] = @GoodTeg_ID WHERE (([ID_Good] = @Original_ID_Good) AND ([NameGood] = @Original_NameGood) AND ([GoodNumber] = @Original_GoodNumber) AND ([GoodCost] = @Original_GoodCost) AND ([GoodNalichie] = @Original_GoodNalichie) AND ((@IsNull_GoodTeg_ID = 1 AND [GoodTeg_ID] IS NULL) OR ([GoodTeg_ID] = @Original_GoodTeg_ID)));
+SELECT ID_Good, NameGood, GoodNumber, GoodCost, GoodNalichie, GoodTeg_ID FROM Goods WHERE (ID_Good = @ID_Good)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NameGood" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NameGood" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GoodNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@GoodCost" Precision="10" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="GoodCost" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GoodNalichie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNalichie" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GoodTeg_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodTeg_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NameGood" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NameGood" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GoodNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_GoodCost" Precision="10" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="GoodCost" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GoodNalichie" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodNalichie" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_GoodTeg_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodTeg_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GoodTeg_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GoodTeg_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID_Good" ColumnName="ID_Good" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_Good" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Good" DataSetColumn="ID_Good" />
+              <Mapping SourceColumn="NameGood" DataSetColumn="NameGood" />
+              <Mapping SourceColumn="GoodNumber" DataSetColumn="GoodNumber" />
+              <Mapping SourceColumn="GoodCost" DataSetColumn="GoodCost" />
+              <Mapping SourceColumn="GoodNalichie" DataSetColumn="GoodNalichie" />
+              <Mapping SourceColumn="GoodTeg_ID" DataSetColumn="GoodTeg_ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GoodTegTableAdapter" GeneratorDataComponentClassName="GoodTegTableAdapter" Name="GoodTeg" UserDataComponentName="GoodTegTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UNLV_IncConnectionString (Settings)" DbObjectName="UNLV_Inc.dbo.GoodTeg" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[GoodTeg] WHERE (([ID_GoodTeg] = @Original_ID_GoodTeg) AND ([GoodTeg] = @Original_GoodTeg))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_GoodTeg" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_GoodTeg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_GoodTeg" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="GoodTeg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[GoodTeg] ([GoodTeg]) VALUES (@GoodTeg);
+SELECT ID_GoodTeg, GoodTeg FROM GoodTeg WHERE (ID_GoodTeg = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@GoodTeg" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="GoodTeg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_GoodTeg, GoodTeg FROM dbo.GoodTeg</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[GoodTeg] SET [GoodTeg] = @GoodTeg WHERE (([ID_GoodTeg] = @Original_ID_GoodTeg) AND ([GoodTeg] = @Original_GoodTeg));
+SELECT ID_GoodTeg, GoodTeg FROM GoodTeg WHERE (ID_GoodTeg = @ID_GoodTeg)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@GoodTeg" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="GoodTeg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_GoodTeg" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_GoodTeg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_GoodTeg" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="GoodTeg" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID_GoodTeg" ColumnName="ID_GoodTeg" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_GoodTeg" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_GoodTeg" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_GoodTeg" DataSetColumn="ID_GoodTeg" />
+              <Mapping SourceColumn="GoodTeg" DataSetColumn="GoodTeg" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdersTableAdapter" GeneratorDataComponentClassName="OrdersTableAdapter" Name="Orders" UserDataComponentName="OrdersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UNLV_IncConnectionString (Settings)" DbObjectName="UNLV_Inc.dbo.Orders" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[Orders] WHERE (([ID_Order] = @Original_ID_Order) AND ((@IsNull_ID_Client = 1 AND [ID_Client] IS NULL) OR ([ID_Client] = @Original_ID_Client)) AND ((@IsNull_ID_Good = 1 AND [ID_Good] IS NULL) OR ([ID_Good] = @Original_ID_Good)) AND ([Quantity] = @Original_Quantity) AND ([OrderDate] = @Original_OrderDate))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Order" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Order" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Client" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Client" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_OrderDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="OrderDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[Orders] ([ID_Client], [ID_Good], [Quantity], [OrderDate]) VALUES (@ID_Client, @ID_Good, @Quantity, @OrderDate);
+SELECT ID_Order, ID_Client, ID_Good, Quantity, OrderDate FROM Orders WHERE (ID_Order = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Client" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@OrderDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="OrderDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Order, ID_Client, ID_Good, Quantity, OrderDate FROM dbo.Orders</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[Orders] SET [ID_Client] = @ID_Client, [ID_Good] = @ID_Good, [Quantity] = @Quantity, [OrderDate] = @OrderDate WHERE (([ID_Order] = @Original_ID_Order) AND ((@IsNull_ID_Client = 1 AND [ID_Client] IS NULL) OR ([ID_Client] = @Original_ID_Client)) AND ((@IsNull_ID_Good = 1 AND [ID_Good] IS NULL) OR ([ID_Good] = @Original_ID_Good)) AND ([Quantity] = @Original_Quantity) AND ([OrderDate] = @Original_OrderDate));
+SELECT ID_Order, ID_Client, ID_Good, Quantity, OrderDate FROM Orders WHERE (ID_Order = @ID_Order)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Client" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@OrderDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="OrderDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Order" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Order" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Client" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Client" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Client" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID_Good" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID_Good" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Quantity" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Quantity" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_OrderDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="OrderDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID_Order" ColumnName="ID_Order" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID_Order" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID_Order" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Order" DataSetColumn="ID_Order" />
+              <Mapping SourceColumn="ID_Client" DataSetColumn="ID_Client" />
+              <Mapping SourceColumn="ID_Good" DataSetColumn="ID_Good" />
+              <Mapping SourceColumn="Quantity" DataSetColumn="Quantity" />
+              <Mapping SourceColumn="OrderDate" DataSetColumn="OrderDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Prsktika3_DSDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="Prsktika3_DSDataSet" msprop:Generator_DataSetName="Prsktika3_DSDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Clients" msprop:Generator_RowEvHandlerName="ClientsRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientsRowDeleted" msprop:Generator_RowDeletingName="ClientsRowDeleting" msprop:Generator_RowEvArgName="ClientsRowChangeEvent" msprop:Generator_TablePropName="Clients" msprop:Generator_RowChangedName="ClientsRowChanged" msprop:Generator_RowChangingName="ClientsRowChanging" msprop:Generator_TableClassName="ClientsDataTable" msprop:Generator_RowClassName="ClientsRow" msprop:Generator_TableVarName="tableClients" msprop:Generator_UserTableName="Clients">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstNameClient" msprop:Generator_ColumnPropNameInRow="FirstNameClient" msprop:Generator_ColumnPropNameInTable="FirstNameClientColumn" msprop:Generator_ColumnVarNameInTable="columnFirstNameClient" msprop:Generator_UserColumnName="FirstNameClient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SurNameClient" msprop:Generator_ColumnPropNameInRow="SurNameClient" msprop:Generator_ColumnPropNameInTable="SurNameClientColumn" msprop:Generator_ColumnVarNameInTable="columnSurNameClient" msprop:Generator_UserColumnName="SurNameClient">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MiddleNameClient" msprop:Generator_ColumnPropNameInRow="MiddleNameClient" msprop:Generator_ColumnPropNameInTable="MiddleNameClientColumn" msprop:Generator_ColumnVarNameInTable="columnMiddleNameClient" msprop:Generator_UserColumnName="MiddleNameClient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PasportSeriya" msprop:Generator_ColumnPropNameInRow="PasportSeriya" msprop:Generator_ColumnPropNameInTable="PasportSeriyaColumn" msprop:Generator_ColumnVarNameInTable="columnPasportSeriya" msprop:Generator_UserColumnName="PasportSeriya" type="xs:int" />
+              <xs:element name="PasportNumber" msprop:Generator_ColumnPropNameInRow="PasportNumber" msprop:Generator_ColumnPropNameInTable="PasportNumberColumn" msprop:Generator_ColumnVarNameInTable="columnPasportNumber" msprop:Generator_UserColumnName="PasportNumber" type="xs:int" />
+              <xs:element name="NameGood" msprop:Generator_ColumnPropNameInRow="NameGood" msprop:Generator_ColumnPropNameInTable="NameGoodColumn" msprop:Generator_ColumnVarNameInTable="columnNameGood" msprop:Generator_UserColumnName="NameGood">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GoodNumber" msprop:Generator_ColumnPropNameInRow="GoodNumber" msprop:Generator_ColumnPropNameInTable="GoodNumberColumn" msprop:Generator_ColumnVarNameInTable="columnGoodNumber" msprop:Generator_UserColumnName="GoodNumber" type="xs:int" />
+              <xs:element name="GoodCost" msprop:Generator_ColumnPropNameInRow="GoodCost" msprop:Generator_ColumnPropNameInTable="GoodCostColumn" msprop:Generator_ColumnVarNameInTable="columnGoodCost" msprop:Generator_UserColumnName="GoodCost" type="xs:decimal" />
+              <xs:element name="GoodNalichie" msprop:Generator_ColumnPropNameInRow="GoodNalichie" msprop:Generator_ColumnPropNameInTable="GoodNalichieColumn" msprop:Generator_ColumnVarNameInTable="columnGoodNalichie" msprop:Generator_UserColumnName="GoodNalichie" type="xs:int" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:int" />
+              <xs:element name="OrderDate" msprop:Generator_ColumnPropNameInRow="OrderDate" msprop:Generator_ColumnPropNameInTable="OrderDateColumn" msprop:Generator_ColumnVarNameInTable="columnOrderDate" msprop:Generator_UserColumnName="OrderDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Goods" msprop:Generator_RowEvHandlerName="GoodsRowChangeEventHandler" msprop:Generator_RowDeletedName="GoodsRowDeleted" msprop:Generator_RowDeletingName="GoodsRowDeleting" msprop:Generator_RowEvArgName="GoodsRowChangeEvent" msprop:Generator_TablePropName="Goods" msprop:Generator_RowChangedName="GoodsRowChanged" msprop:Generator_RowChangingName="GoodsRowChanging" msprop:Generator_TableClassName="GoodsDataTable" msprop:Generator_RowClassName="GoodsRow" msprop:Generator_TableVarName="tableGoods" msprop:Generator_UserTableName="Goods">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Good" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Good" msprop:Generator_ColumnPropNameInTable="ID_GoodColumn" msprop:Generator_ColumnVarNameInTable="columnID_Good" msprop:Generator_UserColumnName="ID_Good" type="xs:int" />
+              <xs:element name="NameGood" msprop:Generator_ColumnPropNameInRow="NameGood" msprop:Generator_ColumnPropNameInTable="NameGoodColumn" msprop:Generator_ColumnVarNameInTable="columnNameGood" msprop:Generator_UserColumnName="NameGood">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GoodNumber" msprop:Generator_ColumnPropNameInRow="GoodNumber" msprop:Generator_ColumnPropNameInTable="GoodNumberColumn" msprop:Generator_ColumnVarNameInTable="columnGoodNumber" msprop:Generator_UserColumnName="GoodNumber" type="xs:int" />
+              <xs:element name="GoodCost" msprop:Generator_ColumnPropNameInRow="GoodCost" msprop:Generator_ColumnPropNameInTable="GoodCostColumn" msprop:Generator_ColumnVarNameInTable="columnGoodCost" msprop:Generator_UserColumnName="GoodCost" type="xs:decimal" />
+              <xs:element name="GoodNalichie" msprop:Generator_ColumnPropNameInRow="GoodNalichie" msprop:Generator_ColumnPropNameInTable="GoodNalichieColumn" msprop:Generator_ColumnVarNameInTable="columnGoodNalichie" msprop:Generator_UserColumnName="GoodNalichie" type="xs:int" />
+              <xs:element name="GoodTeg_ID" msprop:Generator_ColumnPropNameInRow="GoodTeg_ID" msprop:Generator_ColumnPropNameInTable="GoodTeg_IDColumn" msprop:Generator_ColumnVarNameInTable="columnGoodTeg_ID" msprop:Generator_UserColumnName="GoodTeg_ID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GoodTeg" msprop:Generator_RowEvHandlerName="GoodTegRowChangeEventHandler" msprop:Generator_RowDeletedName="GoodTegRowDeleted" msprop:Generator_RowDeletingName="GoodTegRowDeleting" msprop:Generator_RowEvArgName="GoodTegRowChangeEvent" msprop:Generator_TablePropName="GoodTeg" msprop:Generator_RowChangedName="GoodTegRowChanged" msprop:Generator_RowChangingName="GoodTegRowChanging" msprop:Generator_TableClassName="GoodTegDataTable" msprop:Generator_RowClassName="GoodTegRow" msprop:Generator_TableVarName="tableGoodTeg" msprop:Generator_UserTableName="GoodTeg">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_GoodTeg" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_GoodTeg" msprop:Generator_ColumnPropNameInTable="ID_GoodTegColumn" msprop:Generator_ColumnVarNameInTable="columnID_GoodTeg" msprop:Generator_UserColumnName="ID_GoodTeg" type="xs:int" />
+              <xs:element name="GoodTeg" msprop:Generator_ColumnPropNameInRow="GoodTeg" msprop:Generator_ColumnPropNameInTable="GoodTegColumn" msprop:Generator_ColumnVarNameInTable="columnGoodTeg" msprop:Generator_UserColumnName="GoodTeg">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Orders" msprop:Generator_RowEvHandlerName="OrdersRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdersRowDeleted" msprop:Generator_RowDeletingName="OrdersRowDeleting" msprop:Generator_RowEvArgName="OrdersRowChangeEvent" msprop:Generator_TablePropName="Orders" msprop:Generator_RowChangedName="OrdersRowChanged" msprop:Generator_RowChangingName="OrdersRowChanging" msprop:Generator_TableClassName="OrdersDataTable" msprop:Generator_RowClassName="OrdersRow" msprop:Generator_TableVarName="tableOrders" msprop:Generator_UserTableName="Orders">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Order" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ID_Order" msprop:Generator_ColumnPropNameInTable="ID_OrderColumn" msprop:Generator_ColumnVarNameInTable="columnID_Order" msprop:Generator_UserColumnName="ID_Order" type="xs:int" />
+              <xs:element name="ID_Client" msprop:Generator_ColumnPropNameInRow="ID_Client" msprop:Generator_ColumnPropNameInTable="ID_ClientColumn" msprop:Generator_ColumnVarNameInTable="columnID_Client" msprop:Generator_UserColumnName="ID_Client" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_Good" msprop:Generator_ColumnPropNameInRow="ID_Good" msprop:Generator_ColumnPropNameInTable="ID_GoodColumn" msprop:Generator_ColumnVarNameInTable="columnID_Good" msprop:Generator_UserColumnName="ID_Good" type="xs:int" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_UserColumnName="Quantity" type="xs:int" />
+              <xs:element name="OrderDate" msprop:Generator_ColumnPropNameInRow="OrderDate" msprop:Generator_ColumnPropNameInTable="OrderDateColumn" msprop:Generator_ColumnVarNameInTable="columnOrderDate" msprop:Generator_UserColumnName="OrderDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Goods" />
+      <xs:field xpath="mstns:ID_Good" />
+    </xs:unique>
+    <xs:unique name="GoodTeg_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GoodTeg" />
+      <xs:field xpath="mstns:ID_GoodTeg" />
+    </xs:unique>
+    <xs:unique name="Orders_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Orders" />
+      <xs:field xpath="mstns:ID_Order" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK__Goods__GoodTeg_I__236943A5" msdata:parent="GoodTeg" msdata:child="Goods" msdata:parentkey="ID_GoodTeg" msdata:childkey="GoodTeg_ID" msprop:Generator_UserParentTable="GoodTeg" msprop:Generator_UserChildTable="Goods" msprop:Generator_RelationVarName="relationFK__Goods__GoodTeg_I__236943A5" msprop:Generator_UserRelationName="FK__Goods__GoodTeg_I__236943A5" msprop:Generator_ChildPropName="GetGoodsRows" msprop:Generator_ParentPropName="GoodTegRow" />
+      <msdata:Relationship name="FK__Orders__ID_Good__2739D489" msdata:parent="Goods" msdata:child="Orders" msdata:parentkey="ID_Good" msdata:childkey="ID_Good" msprop:Generator_UserParentTable="Goods" msprop:Generator_UserChildTable="Orders" msprop:Generator_RelationVarName="relationFK__Orders__ID_Good__2739D489" msprop:Generator_ChildPropName="GetOrdersRows" msprop:Generator_ParentPropName="GoodsRow" msprop:Generator_UserRelationName="FK__Orders__ID_Good__2739D489" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
